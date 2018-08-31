@@ -13,6 +13,7 @@ class Store extends Map {
 	
 	loadFile(path) {
 		//dummy function
+		//more dummy functions to come
 	}
 	
 	loadAllFiles(dir) {
