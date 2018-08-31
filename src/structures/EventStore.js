@@ -33,3 +33,5 @@ class EventStore extends Store {
 		this.listenerList.length = 0;
 	}
 }
+
+module.exports = EventStore;

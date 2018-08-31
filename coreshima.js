@@ -3,7 +3,8 @@
 const {Client} = require("discord.js"),
 	{join} = require("path"),
 	fs = require("fs"),
-	Store = require("./structures/Store.js"),
+	CommandStore = require("./src/structures/CommandStore.js"),
+	EventStore = require("./src/structures/EventStore.js"),
 	config = JSON.parse(fs.readFileSync("config.json"));
 
 
@@ -12,8 +13,8 @@ class Shimakaze extends Client {
 		super(settings);
 		
 		this.prefix = prefix;
-		this.commands = new Store(this);
-		this.events = new Store(this);
+		this.commands = new CommandStore(this);
+		this.events = new EventStore(this);
 		
 		this.commands.loadAllFiles(join(process.cwd(), "commands"));
 		this.events.loadAllFiles(join(process.cwd(), "events"));

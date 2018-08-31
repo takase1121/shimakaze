@@ -11,3 +11,5 @@ class CommandStore extends Store {
 		this.set(buf.name, new buf(this.client));
 	}
 }
+
+module.exports = CommandStore;

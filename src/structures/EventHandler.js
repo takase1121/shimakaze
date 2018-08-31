@@ -9,3 +9,5 @@ class EventHandler {
 	
 	async run(...args) {}
 }
+
+module.exports = EventHandler;

@@ -15,9 +15,11 @@ class Store extends Map {
 	}
 	
 	loadAllFiles(dir) {
-		const validFiles = readdirSync(dir).filter(x => x.endsWith(".js")).map(x => {name:x, stats: fstatSync(x)}).filter(x => x.stats.isFile());
+		const validFiles = readdirSync(dir).filter(x => x.endsWith(".js")).map(x => {return {name:x, stats: fstatSync(x)}}).filter(x => x.stats.isFile());
 		for (const elem of validFiles) {
 			this.loadFile(elem);
 		}
 	}
 }
+
+module.exports = Store;
