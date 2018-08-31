@@ -7,7 +7,5 @@ class EventHandler {
 	
 	static get name() {return "handler"}
 	
-	async run(...args) {
-		if this.client
-	}
+	async run(...args) {}
 }
