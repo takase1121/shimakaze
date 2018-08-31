@@ -1,0 +1,19 @@
+{
+  "name": "shimakaze",
+  "version": "1.0.0",
+  "description": "A bot",
+  "main": "coreshima.js",
+  "scripts": {
+    "test": "node coreshima.js"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Takase",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "erlpack": "^0.1.2",
+    "uws": "^99.0.0"
+  }
+}
