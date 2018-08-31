@@ -12,9 +12,9 @@ class EventStore extends Store {
 
 	loadFile(path) {
 		const buf = require(path);
-
+		
 		this.listenerList.push(buf.name);
-		this.client.on(buf.name, new buf(this.client));
+		this.client.on(buf.name, new buf(this.client).run);
 	}
 
 	delete(key) {

@@ -16,8 +16,8 @@ class Shimakaze extends Client {
 		this.commands = new CommandStore(this);
 		this.events = new EventStore(this);
 		
-		this.commands.loadAllFiles(join(process.cwd(), "commands"));
-		this.events.loadAllFiles(join(process.cwd(), "events"));
+		this.commands.loadAllFiles(join(process.cwd(), "src/commands"));
+		this.events.loadAllFiles(join(process.cwd(), "src/events"));
 		
 		this.login(token);
 	}

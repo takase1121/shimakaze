@@ -1,6 +1,7 @@
 //command / event store with internal load stuff probably
 
-const {readdirSync, fstatSync} = require("fs");
+const {readdirSync, statSync} = require("fs"),
+	{join} = require("path");
 
 
 class Store extends Map {
@@ -15,9 +16,12 @@ class Store extends Map {
 	}
 	
 	loadAllFiles(dir) {
-		const validFiles = readdirSync(dir).filter(x => x.endsWith(".js")).map(x => {return {name:x, stats: fstatSync(x)}}).filter(x => x.stats.isFile());
+		const validFiles = readdirSync(dir).filter(x => x.endsWith(".js"))
+			.map(x => join(dir, x))
+			.map(x => {return {n: x, s: statSync(x)}})
+			.filter(x => x.s.isFile());
 		for (const elem of validFiles) {
-			this.loadFile(elem);
+			this.loadFile(elem.n);
 		}
 	}
 }

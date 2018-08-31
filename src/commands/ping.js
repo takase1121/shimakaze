@@ -10,6 +10,8 @@ class Ping extends CommandHandler {
 	static get name() {return "ping"}
 	
 	async run(msg) {
-		await msg.channel.send(`Teitoku, the ping is ${this.client.ping}`);
+		await msg.channel.send(`Teitoku, the ping is **${this.client.ping}** ms.`);
 	}
 }
+
+module.exports = Ping;

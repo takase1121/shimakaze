@@ -8,6 +8,7 @@ class CommandStore extends Store {
 	
 	loadFile(path) {
 		const buf = require(path);
+		
 		this.set(buf.name, new buf(this.client));
 	}
 }
