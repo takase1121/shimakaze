@@ -29,5 +29,7 @@ class EventStore extends Store {
 		for (const elem of this.listnerList) {
 			this.client.removeAllListeners(this.client);
 		}
+		
+		this.listenerList.length = 0;
 	}
 }
