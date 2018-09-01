@@ -8,8 +8,6 @@ class message extends EventHandler {
 		super(client);
 	}
 	
-	static get name() {return "message"}
-	
 	async run(msg) {
 		if (msg.author.bot) return;
 		if (msg.channel.type !== "DEFAULT" && !["TextChannel"].includes(msg.channel.constructor.name)) return;

@@ -8,8 +8,6 @@ class ready extends EventHandler {
 		super(client);
 	}
 	
-	static get name() {return "ready"}
-	
 	async run() {
 		console.log("The bot has started.");
 	}
