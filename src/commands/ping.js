@@ -6,7 +6,6 @@ const CommandHandler = require("../structures/CommandHandler.js");
 class Ping extends CommandHandler {
 	constructor(client) {
 		super(client);
-		this.name = name;
 	}
 	
 	

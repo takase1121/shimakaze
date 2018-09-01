@@ -15,11 +15,11 @@ class message extends EventHandler {
 		if (!msg.content.startsWith(this.prefix)) return;
 		
 		const command = msg.content.split(" ")[0].substr(this.prefix.length).toLowerCase(),
-			args = msg.content.split(" ").slice(1);
+			args = msg.content.slice(command.length + this.prefix.length).trim();
 		
 		if (!this.commands.has(command)) return;
 		
-		this.commands.get(command).run(msg).catch(x => console.log(`Error: ${x.trace || x}`));
+		this.commands.get(command).run(msg, args).catch(x => console.log(`Error: ${x.trace || x}`));
 	}
 }
 
